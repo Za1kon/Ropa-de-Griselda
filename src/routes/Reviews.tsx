@@ -5,7 +5,7 @@ export const Reviews = () => {
     </ReviewsStyles>
   )
 }
-const ReviewsStyles = styled.div`
+const ReviewsStyles = styled.section`
     position: absolute;
     top: 0;
     width: 100%;

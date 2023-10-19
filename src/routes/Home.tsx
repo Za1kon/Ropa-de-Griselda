@@ -6,7 +6,7 @@ export const Home = () => {
     </HomeStyled>
   )
 }
-const HomeStyled = styled.div`
+const HomeStyled = styled.section`
     position: absolute;
     top: 0;
     width: 100%;

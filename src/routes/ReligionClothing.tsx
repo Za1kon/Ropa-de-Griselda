@@ -5,7 +5,7 @@ export const ReligionClothing = () => {
     </ReligionClothingStyles>
   )
 }
-const ReligionClothingStyles = styled.div`
+const ReligionClothingStyles = styled.section`
     position: absolute;
     top: 0;
     width: 100%;

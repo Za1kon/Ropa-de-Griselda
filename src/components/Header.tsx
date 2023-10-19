@@ -6,19 +6,16 @@ import { BurguerButton } from './BurguerButton'
 export const Header = () => {
   const [clicked, setClicked] = useState(false)
   const handleClick = () => {
-    setClicked(!clicked)
-  }
-  const handleLinkClick = () => {
     if (window.matchMedia('(max-width: 767px)').matches) setClicked(!clicked)
   }
   return (
     <HeaderStyled>
       <img src={logo} alt="Logo"/>
       <nav className={`links ${clicked ? 'active' : ''}`}>
-        <NavLink to='/' onClick={handleLinkClick}>Inicio</NavLink>
-        <NavLink to='/religion-clothing' onClick={handleLinkClick}>Ropa de Religion</NavLink>
-        <NavLink to='/reviews' onClick={handleLinkClick}>Reseñas</NavLink>
-        <NavLink to='/contact' onClick={handleLinkClick}>Contacto</NavLink>
+        <NavLink to='/' onClick={handleClick}>Inicio</NavLink>
+        <NavLink to='/religion-clothing' onClick={handleClick}>Ropa de Religion</NavLink>
+        <NavLink to='/reviews' onClick={handleClick}>Reseñas</NavLink>
+        <NavLink to='/contact' onClick={handleClick}>Contacto</NavLink>
       </nav>
       <div className='burguer'>
       <BurguerButton clicked={clicked} handleClick={handleClick} />
