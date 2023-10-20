@@ -1,8 +1,8 @@
 import { useState } from 'react'
-import { NavLink } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import styled from 'styled-components'
 import logo from '../assets/logo.png'
-import { BurguerButton } from './BurguerButton'
+import { BurgerButton } from './BurgerButton'
 export const Header = () => {
   const [clicked, setClicked] = useState(false)
   const handleClick = () => {
@@ -10,15 +10,17 @@ export const Header = () => {
   }
   return (
     <HeaderStyled>
-      <img src={logo} alt="Logo"/>
+      <Link to='/' className='logo'>
+        <img src={logo} alt="Logo" className='logo__img'/>
+      </Link>
       <nav className={`links ${clicked ? 'active' : ''}`}>
         <NavLink to='/' onClick={handleClick}>Inicio</NavLink>
         <NavLink to='/religion-clothing' onClick={handleClick}>Ropa de Religion</NavLink>
         <NavLink to='/reviews' onClick={handleClick}>Reseñas</NavLink>
         <NavLink to='/contact' onClick={handleClick}>Contacto</NavLink>
       </nav>
-      <div className='burguer'>
-      <BurguerButton clicked={clicked} handleClick={handleClick} />
+      <div className='burger'>
+      <BurgerButton clicked={clicked} handleClick={handleClick} />
       </div>
       <BgDiv className={`initial ${clicked ? 'active' : ''}`}></BgDiv>
     </HeaderStyled>
@@ -30,8 +32,18 @@ const HeaderStyled = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  img{
-    width: 8em;
+  .logo{
+    margin-left: 1em;
+    margin-top: 2em;
+    @media(min-width: 1024px){
+      margin-top: 4em;
+    }
+    &__img {
+      width: 6em;
+      @media(min-width: 1024px){
+        width: 8em;
+      }
+    }
   }
   .links {
     position: absolute;
@@ -40,11 +52,14 @@ const HeaderStyled = styled.header`
     @media(min-width: 768px){
       position: initial;
     }
-    a{
+    a {
       margin-right: 2em;
       display: inline;
       font-family: Verdana, Geneva, Tahoma, sans-serif;
       font-size: .9em;
+      @media(min-width: 1024px){
+        font-size: 1.09em;
+      }
       text-decoration: none;
       color: #222;
       @media(max-width: 767px){
@@ -53,7 +68,7 @@ const HeaderStyled = styled.header`
         font-size: 1.3em;
         color: #fff;
       }
-      &.active{
+      &.active {
         @media(min-width: 768px){
         border-bottom: 1px solid #222;
       }
@@ -62,7 +77,7 @@ const HeaderStyled = styled.header`
       }
       }
     }
-    &.active{
+    &.active {
       position: absolute;
       top: 30%;
       left: 0;
@@ -70,7 +85,7 @@ const HeaderStyled = styled.header`
       z-index: 100;
     }
   }
-  .burguer {
+  .burger {
     margin-right: 1em;
     z-index: 20;
     @media(min-width: 768px){
@@ -82,8 +97,7 @@ const BgDiv = styled.div`
   background-color: #000a;
   position: absolute;
   top: -100vh;
-  transition: all .1s ease;
-  &.active{
+  &.active {
     top: 0;
     width: 100%;
     height: 100vh;

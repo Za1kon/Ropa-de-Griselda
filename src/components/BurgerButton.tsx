@@ -1,21 +1,21 @@
 import styled from "styled-components"
-type BurguerButtonProps = {
+type BurgerButtonProps = {
   handleClick: () => void;
   clicked: boolean;
 }
-export const BurguerButton: React.FC<BurguerButtonProps> = ({ handleClick, clicked }) => {
+export const BurgerButton: React.FC<BurgerButtonProps> = ({ handleClick, clicked }) => {
   return (
-    <Burguer>
+    <Burger>
         <div onClick={handleClick} 
              className={`icon nav-icon-5 ${clicked ? 'open' : ''}`}>
             <span></span>
             <span></span>
             <span></span>
         </div>
-    </Burguer>
+    </Burger>
   )
 }
-const Burguer = styled.div`
+const Burger = styled.div`
 .nav-icon-5{
   width: 35px;
   height: 30px;
@@ -31,7 +31,7 @@ const Burguer = styled.div`
   transition: .3s cubic-bezier(.8, .5, .2, 1.4);
   width:100%;
   height: 4px;
-  transition-duration: 500ms
+  transition-duration: 300ms
 }
 .nav-icon-5 span:nth-child(1){
   top:0px;
