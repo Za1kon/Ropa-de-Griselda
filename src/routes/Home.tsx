@@ -32,11 +32,11 @@ const HomeStyled = styled.section`
       width: 100%;
       background-color: #3695;
       display: flex;
-      @media(max-width: 767px){
+      @media(max-width: 1023px){
         flex-direction: column;
       }
       justify-content: center;
-      align-items: center;
+      align-items: start;
       div{
         height: 100%;
         flex-grow: 1;
