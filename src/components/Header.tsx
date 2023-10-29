@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import styled from 'styled-components'
 import logo from '../assets/logo.png'
@@ -8,6 +8,15 @@ export const Header = () => {
   const handleClick = () => {
     if (window.matchMedia('(max-width: 767px)').matches) setClicked(!clicked)
   }
+  const handleResize = () => {
+    if (window.matchMedia('(min-width: 768px)').matches) setClicked(false);
+  };
+  useEffect(() => {
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
   return (
     <HeaderStyled>
       <Link to='/' className='logo'>
@@ -22,7 +31,7 @@ export const Header = () => {
       <div className='burger'>
       <BurgerButton clicked={clicked} handleClick={handleClick} />
       </div>
-      <BgDiv className={`initial ${clicked ? 'active' : ''}`}></BgDiv>
+      <BgDiv className={`initial ${clicked ? 'active' : ''}`} />
     </HeaderStyled>
   )
 }
@@ -70,11 +79,11 @@ const HeaderStyled = styled.header`
       }
       &.active {
         @media(min-width: 768px){
-        border-bottom: 1px solid #222;
-      }
+          border-bottom: 1px solid #222;
+        }
         @media(max-width: 767px){
-        color: #7ad;
-      }
+          color: #7ad;
+        }
       }
     }
     &.active {
@@ -101,5 +110,6 @@ const BgDiv = styled.div`
     top: 0;
     width: 100%;
     height: 100vh;
+    min-height: 42em;
   }
 `

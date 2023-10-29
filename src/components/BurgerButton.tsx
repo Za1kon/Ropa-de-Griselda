@@ -1,9 +1,6 @@
 import styled from "styled-components"
-type BurgerButtonProps = {
-  handleClick: () => void;
-  clicked: boolean;
-}
-export const BurgerButton: React.FC<BurgerButtonProps> = ({ handleClick, clicked }) => {
+import { ButtonProps } from "../vite-env"
+export const BurgerButton: React.FC<ButtonProps> = ({ handleClick, clicked }) => {
   return (
     <Burger>
         <div onClick={handleClick} 
