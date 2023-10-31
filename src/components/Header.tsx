@@ -3,6 +3,7 @@ import { Link, NavLink } from 'react-router-dom'
 import styled from 'styled-components'
 import logo from '../assets/logo.png'
 import { BurgerButton } from './BurgerButton'
+import { BgDiv } from './BgDiv'
 export const Header = () => {
   const [clicked, setClicked] = useState(false)
   const handleClick = () => {
@@ -31,7 +32,7 @@ export const Header = () => {
       <div className='burger'>
       <BurgerButton clicked={clicked} handleClick={handleClick} />
       </div>
-      <BgDiv className={`initial ${clicked ? 'active' : ''}`} />
+      <BgDiv clicked={clicked} />
     </HeaderStyled>
   )
 }
@@ -100,16 +101,5 @@ const HeaderStyled = styled.header`
     @media(min-width: 768px){
       display: none;
     }
-  }
-`
-const BgDiv = styled.div`
-  background-color: #000a;
-  position: absolute;
-  top: -100vh;
-  &.active {
-    top: 0;
-    width: 100%;
-    height: 100vh;
-    min-height: 42em;
   }
 `

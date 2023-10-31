@@ -1,5 +1,5 @@
 /// <reference types="vite/client" />
 export type ButtonProps = {
-    handleClick: () => void;
+    handleClick?: () => void;
     clicked: boolean;
   }
