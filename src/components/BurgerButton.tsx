@@ -2,17 +2,17 @@ import styled from "styled-components"
 import { ButtonProps } from "../vite-env"
 export const BurgerButton: React.FC<ButtonProps> = ({ handleClick, clicked }) => {
   return (
-    <Burger>
-        <div onClick={handleClick} 
-             className={`icon nav-icon-5 ${clicked ? 'open' : ''}`}>
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </Burger>
+    <BurgerStyled>
+      <div onClick={handleClick} 
+           className={`icon nav-icon-5 ${clicked ? 'open' : ''}`}>
+          <span></span>
+          <span></span>
+          <span></span>
+      </div>
+    </BurgerStyled>
   )
 }
-const Burger = styled.div`
+const BurgerStyled = styled.div`
 .nav-icon-5{
   width: 35px;
   height: 30px;

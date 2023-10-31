@@ -20,7 +20,7 @@ export const Home = () => {
           paragraph="Si bien nos especializamos en vestidos de religión, estamos emocionadas de ampliar nuestro catálogo en el futuro, ¡así que mantente atento a las emocionantes novedades que vendrán!" />
         </div>
           <CardButton clicked={clicked} handleClick={handleClick}/>
-        <div className={`container__cards container__cards--end ${clicked ? '' : 'hidden'}`}>
+        <div className={`container__cards ${clicked ? '' : 'hidden'}`}>
           <Card
           tittle="Cosas:"
           paragraph='Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis distinctio non enim? Placeat nulla voluptatum possimus blanditiis quisquam magni nesciunt velit, voluptatibus, soluta iusto distinctio voluptatem totam quis. Sit, corporis.' />
@@ -64,7 +64,7 @@ const HomeStyled = styled.section`
         display: flex;
         flex-direction: column;
         align-items: start;
-        &--end{
+        &:last-child{
           align-items: end;
         }
         @media (min-width: 768px){

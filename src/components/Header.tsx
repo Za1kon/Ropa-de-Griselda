@@ -30,7 +30,7 @@ export const Header = () => {
         <NavLink to='/contact' onClick={handleClick}>Contacto</NavLink>
       </nav>
       <div className='burger'>
-      <BurgerButton clicked={clicked} handleClick={handleClick} />
+        <BurgerButton clicked={clicked} handleClick={handleClick} />
       </div>
       <BgDiv clicked={clicked} />
     </HeaderStyled>
