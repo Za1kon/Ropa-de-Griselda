@@ -11,11 +11,9 @@ const CardButtonStyled = styled.i`
   @media(min-width: 768px){
     display: none;
   }
-  position: absolute;
-  top: 40%;
-  left: 80%;
+  position: relative;
+  left: 92%;
   &.moved{
-    left: 5%;
+    left: -92%;
   }
-  transition: all .2s;
 `

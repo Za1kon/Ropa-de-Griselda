@@ -13,20 +13,21 @@ export const Home = () => {
       <div className="container">
         <div className={`container__cards ${clicked ? 'hidden' : ''}`}>
           <Card
-          tittle="Introducción:"
+          tittle="Introducción"
           paragraph="Somos Griselda y Soledad, madre e hija, y estamos emocionadas de presentarte nuestra tienda en línea, GrisySol." />
+          <CardButton clicked={clicked} handleClick={handleClick} />
           <Card
-          tittle="Nuestra Colección:"
+          tittle="Nuestra Colección"
           paragraph="Si bien nos especializamos en vestidos de religión, estamos emocionadas de ampliar nuestro catálogo en el futuro, ¡así que mantente atento a las emocionantes novedades que vendrán!" />
         </div>
-          <CardButton clicked={clicked} handleClick={handleClick}/>
         <div className={`container__cards ${clicked ? '' : 'hidden'}`}>
           <Card
-          tittle="Cosas:"
-          paragraph='Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis distinctio non enim? Placeat nulla voluptatum possimus blanditiis quisquam magni nesciunt velit, voluptatibus, soluta iusto distinctio voluptatem totam quis. Sit, corporis.' />
+          tittle="Algunas Cosas"
+          paragraph='Los ríos serpenteaban entre los bosques antiguos, creando un paisaje pintoresco y tranquilo. El sol se filtraba entre las hojas, pintando destellos dorados sobre la superficie del agua, mientras los pájaros cantaban en armonía.' />
+          <CardButton clicked={clicked} handleClick={handleClick} />
           <Card
-          tittle="Otras Cosas:"
-          paragraph="Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis distinctio non enim? Placeat nulla voluptatum possimus blanditiis quisquam magni nesciunt velit, voluptatibus, soluta iusto distinctio voluptatem totam quis. Sit, corporis." />
+          tittle="Otras Cosas"
+          paragraph="En la bulliciosa ciudad, el vaivén constante de personas llenaba las calles. Luces brillantes iluminaban los escaparates de tiendas variadas. El aroma de comida callejera mezclado con el sonido de conversaciones animadas creaba un ambiente vibrante y acogedor." />
         </div>
       </div>
     </HomeStyled>
@@ -61,11 +62,16 @@ const HomeStyled = styled.section`
         flex-direction: column;
       }
       &__cards{
+        @media(min-width: 768px){
+          gap: 3em;
+        }
         display: flex;
         flex-direction: column;
         align-items: start;
         &:last-child{
-          align-items: end;
+          @media (max-width: 767px){
+            align-items: end;
+          }
         }
         @media (min-width: 768px){
           align-items: center;

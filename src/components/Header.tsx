@@ -71,7 +71,7 @@ const HeaderStyled = styled.header`
         font-size: 1.09em;
       }
       text-decoration: none;
-      color: #222;
+      color: #fff;
       @media(max-width: 767px){
         margin: 1em 0 0;
         display: block;
@@ -80,7 +80,7 @@ const HeaderStyled = styled.header`
       }
       &.active {
         @media(min-width: 768px){
-          border-bottom: 1px solid #222;
+          border-bottom: 1px solid #fff;
         }
         @media(max-width: 767px){
           color: #7ad;
