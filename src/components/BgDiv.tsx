@@ -6,7 +6,7 @@ export const BgDiv: React.FC<ButtonProps> = ({ clicked }) => {
   )
 }
 const BgDivStyled = styled.div`
-  background-color: #000c;
+  background-color: #000000e3;
   position: absolute;
   top: -100vh;
   &.active {

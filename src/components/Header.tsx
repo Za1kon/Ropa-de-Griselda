@@ -25,7 +25,7 @@ export const Header = () => {
       </Link>
       <nav className={`links ${clicked ? 'active' : ''}`}>
         <NavLink to='/' onClick={handleClick}>Inicio</NavLink>
-        <NavLink to='/religion-clothing' onClick={handleClick}>Ropa de Religion</NavLink>
+        <NavLink to='/religion-clothing' onClick={handleClick}>Ropa de Religión</NavLink>
         <NavLink to='/reviews' onClick={handleClick}>Reseñas</NavLink>
         <NavLink to='/contact' onClick={handleClick}>Contacto</NavLink>
       </nav>
@@ -65,7 +65,8 @@ const HeaderStyled = styled.header`
     a {
       margin-right: 2em;
       display: inline;
-      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      font-family: 'Poppins',sans-serif;
+      text-transform: uppercase;
       font-size: .9em;
       @media(min-width: 1024px){
         font-size: 1.09em;
