@@ -1,9 +1,9 @@
 import styled from "styled-components"
 import { ButtonProps } from "../vite-env"
-export const CardButton: React.FC<ButtonProps> = ({ handleClick, clicked }) => {
+export const CardButton: React.FC<ButtonProps> = ({ moved, handleClick }) => {
   return (
     <CardButtonStyled
-    className={`bx bxs-right-arrow ${clicked ? 'bx-rotate-180' : ''} bx-md ${clicked ? 'moved' : ''}`}
+    className={`bx bxs-right-arrow bx-md ${moved}`}
     onClick={handleClick} />
   )
 }
@@ -12,8 +12,9 @@ const CardButtonStyled = styled.i`
     display: none;
   }
   position: relative;
-  left: 92%;
+  left: 93%;
   &.moved{
-    left: -92%;
+    left: -93%;
+    rotate: 180deg;
   }
 `

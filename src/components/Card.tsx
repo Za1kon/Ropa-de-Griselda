@@ -31,7 +31,6 @@ const CardStyles = styled.div`
     width: 90%;
     max-width: 38em;
   }
-  height: 100%;
   &::before {
       content: '';
       border-radius: 10px;

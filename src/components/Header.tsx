@@ -65,7 +65,7 @@ const HeaderStyled = styled.header`
     a {
       margin-right: 2em;
       display: inline;
-      font-family: 'Poppins',sans-serif;
+      font-family: 'Poppins', sans-serif;
       text-transform: uppercase;
       font-size: .9em;
       @media(min-width: 1024px){

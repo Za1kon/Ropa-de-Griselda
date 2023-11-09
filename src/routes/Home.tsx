@@ -11,20 +11,20 @@ export const Home = () => {
   return (
     <HomeStyled>
       <div className="container">
-        <div className={`container__cards ${clicked ? 'hidden' : ''}`}>
+        <div className={`container__cards ${clicked ? 'hidden' : ''} ${clicked ? '' : 'animation'}`}>
           <Card
           tittle="Introducción"
           paragraph="Somos Griselda y Soledad, madre e hija, y estamos emocionadas de presentarte nuestra tienda en línea, GrisySol." />
-          <CardButton clicked={clicked} handleClick={handleClick} />
+            <CardButton handleClick={handleClick} />
           <Card
           tittle="Nuestra Colección"
           paragraph="Si bien nos especializamos en vestidos de religión, estamos emocionadas de ampliar nuestro catálogo en el futuro, ¡así que mantente atento a las emocionantes novedades que vendrán!" />
         </div>
-        <div className={`container__cards ${clicked ? '' : 'hidden'}`}>
+        <div className={`container__cards ${clicked ? '' : 'hidden'} ${clicked ? 'animation' : ''}`}>
           <Card
           tittle="Algunas Cosas"
           paragraph='Los ríos serpenteaban entre los bosques antiguos, creando un paisaje pintoresco y tranquilo. El sol se filtraba entre las hojas, pintando destellos dorados sobre la superficie del agua, mientras los pájaros cantaban en armonía.' />
-          <CardButton clicked={clicked} handleClick={handleClick} />
+            <CardButton moved="moved" handleClick={handleClick} />
           <Card
           tittle="Otras Cosas"
           paragraph="En la bulliciosa ciudad, el vaivén constante de personas llenaba las calles. Luces brillantes iluminaban los escaparates de tiendas variadas. El aroma de comida callejera mezclado con el sonido de conversaciones animadas creaba un ambiente vibrante y acogedor." />
@@ -39,6 +39,7 @@ const HomeStyled = styled.section`
     width: 100%;
     height: 100vh;
     min-height: 42em;
+    overflow: hidden;
     @media(min-width: 1024px){
       min-height: 50em;
     }
@@ -62,7 +63,11 @@ const HomeStyled = styled.section`
         flex-direction: column;
       }
       &__cards{
+        transition: translate 0.3s;
         @media(min-width: 768px){
+          animation-name: rebote;
+          animation-duration: .5s;
+          animation-timing-function: ease-in-out;
           gap: 3em;
         }
         display: flex;
@@ -80,7 +85,24 @@ const HomeStyled = styled.section`
     }
     .hidden{
       @media (max-width: 767px){
-        display: none;
+        margin: 0 2em;
+        position: absolute;
+        translate: 0 -200vh;
+      }
+    }
+    .animation{
+      @keyframes rebote {
+        0% {
+          transform: translateY(-210vh);
+        }
+        50% {
+          transform: translateY(10vh);
+        }
+      }
+      @media (max-width: 767px){
+        animation-name: rebote;
+        animation-duration: .5s;
+        animation-timing-function: ease-in-out;
       }
     }
 `
