@@ -11,6 +11,6 @@ const ContactStyle = styled.section`
     top: 0;
     width: 100%;
     height: 100vh;
-    background-color: #4006;
+    background: #4006;
     z-index: -100;
 `

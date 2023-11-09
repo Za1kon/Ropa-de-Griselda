@@ -61,6 +61,9 @@ const HeaderStyled = styled.header`
     text-align: center;
     @media(min-width: 768px){
       position: initial;
+      animation-name: header-bounces;
+      animation-duration: .25s;
+      animation-timing-function: ease-in-out;
     }
     a {
       margin-right: 2em;
@@ -68,6 +71,11 @@ const HeaderStyled = styled.header`
       font-family: 'Poppins', sans-serif;
       text-transform: uppercase;
       font-size: .9em;
+      @media(min-width: 768px){
+        padding: 5em 1em 1em;
+        border-radius: 5px;
+        background-color: #232323;
+      }
       @media(min-width: 1024px){
         font-size: 1.09em;
       }
@@ -77,15 +85,9 @@ const HeaderStyled = styled.header`
         margin: 1em 0 0;
         display: block;
         font-size: 1.3em;
-        color: #fff;
       }
       &.active {
-        @media(min-width: 768px){
-          border-bottom: 1px solid #fff;
-        }
-        @media(max-width: 767px){
-          color: #7ad;
-        }
+        color: #7ad;
       }
     }
     &.active {

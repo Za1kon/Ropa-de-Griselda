@@ -2,7 +2,7 @@ import styled from "styled-components"
 import { ButtonProps } from "../vite-env"
 export const BurgerButton: React.FC<ButtonProps> = ({ handleClick, clicked }) => {
   return (
-    <BurgerStyled>
+    <BurgerStyled className={`${clicked ? 'bgc__open' : ''}`}>
       <div onClick={handleClick} 
            className={`icon nav-icon-5 ${clicked ? 'open' : ''}`}>
           <span></span>
@@ -13,16 +13,26 @@ export const BurgerButton: React.FC<ButtonProps> = ({ handleClick, clicked }) =>
   )
 }
 const BurgerStyled = styled.div`
+border-bottom-left-radius: 10px;
+  padding-top: 3em;
+  background-color: #232323;
+  &.bgc__open{
+    padding-top: 0;
+    background: none;
+  }
+  animation-name: header-bounces;
+  animation-duration: .25s;
+  animation-timing-function: ease-in-out;
 .nav-icon-5{
   width: 35px;
   height: 30px;
-  margin: 10px 10px;
+  margin: 10px 10px 5px;
   position: relative;
   cursor: pointer;
   display: inline-block;
 }
 .nav-icon-5 span{
-  background-color:#000;
+  background-color:#fff;
   position: absolute;
   border-radius: 2px;
   transition: .3s cubic-bezier(.8, .5, .2, 1.4);

@@ -65,7 +65,7 @@ const HomeStyled = styled.section`
       &__cards{
         transition: translate 0.3s;
         @media(min-width: 768px){
-          animation-name: rebote;
+          animation-name: bounces;
           animation-duration: .5s;
           animation-timing-function: ease-in-out;
           gap: 3em;
@@ -91,7 +91,7 @@ const HomeStyled = styled.section`
       }
     }
     .animation{
-      @keyframes rebote {
+      @keyframes bounces {
         0% {
           transform: translateY(-210vh);
         }
@@ -100,7 +100,7 @@ const HomeStyled = styled.section`
         }
       }
       @media (max-width: 767px){
-        animation-name: rebote;
+        animation-name: bounces;
         animation-duration: .5s;
         animation-timing-function: ease-in-out;
       }

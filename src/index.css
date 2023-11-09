@@ -3,3 +3,9 @@ body, head {
   padding: 0;
   box-sizing: border-box;
 }
+
+@keyframes header-bounces {
+  0% {
+    transform: translateY(-100vh);
+  }
+}
