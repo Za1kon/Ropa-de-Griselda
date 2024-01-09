@@ -1,0 +1,26 @@
+@keyframes bounces {
+  0% {
+    transform: translateY(-210vh);
+  }
+  50% {
+    transform: translateY(10vh);
+  }
+}
+
+.animation {
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
+}
+
+@media (max-width: 767px) {
+  .animation {
+    animation-name: bounces;
+  }
+}
+
+@media (min-width: 768px) {
+  .animation {
+    animation-name: bounces;
+    gap: 3em;
+  }
+}

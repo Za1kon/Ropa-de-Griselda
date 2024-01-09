@@ -1,27 +1,35 @@
 import styled from "styled-components"
-import woodbgc from "../assets/woodbgc.jpg"
 type CardProps = {
-    tittle: string;
+    title: string;
     paragraph: string;
+    link?: string;
+    icon?: React.ReactNode;
+    variant?: string;
+    clicked?: boolean;
   }
-export const Card: React.FC<CardProps> = ({ tittle, paragraph }) => {
+export const Card: React.FC<CardProps> = ({ title, paragraph, link, icon, variant }) => {
   return (
-    <CardStyles>
-      <h2>{ tittle }</h2>
+    <CardStyled variant={variant}>
+      <h2>{ title }</h2>
       <p>{ paragraph }</p>
+      <div className="container">
+        <a href={ link }>
+          { icon }
+        </a>
+      </div>
       <div className="rope1"></div>
       <div className="rope2"></div>
-    </CardStyles>
+    </CardStyled>
   )
 }
-const CardStyles = styled.div`
+const CardStyled = styled.div<{ variant?: string }>`
   position: relative;
   border-radius: 10px;
   border: #000;
-  border-style: groove ridge ridge groove ;
+  border-style: groove ridge ridge groove;
   padding: 0 .8em .5em;
-  background: url(${woodbgc});
-  background-size: cover;
+  margin-left: .5em;
+  background: #232323;
   width: 80%;
   max-width: 35em;
   @media(min-width: 768px){
@@ -39,9 +47,11 @@ const CardStyles = styled.div`
       left: 0;
       width: 100%;
       height: 100%;
-      box-shadow: 6px 6px 5px #000, -6px -6px 5px #fd9;
+      box-shadow: 6px 6px 5px #000, -6px -6px 5px ${(props) =>
+        props.variant === 'contact' ? '#fcc' : '#fd9'};
       @media(min-width: 768px){
-        box-shadow: 8px 8px 5px #000, -8px -8px 5px #fd9;
+        box-shadow: 8px 8px 5px #000, -8px -8px 5px ${(props) =>
+          props.variant === 'contact' ? '#fcc' : '#fd9'};
       }
       z-index: -20;
     }
@@ -56,7 +66,7 @@ const CardStyles = styled.div`
     padding: .1em .4em 0;
     display: inline-block;
     transform: translateX(-50%);
-    background: url(${woodbgc});
+    background: #232323;
     background-size: cover;
     color: #F2BEB1;
     text-align: center;
@@ -77,7 +87,8 @@ const CardStyles = styled.div`
       left: 0;
       width: 100%;
       height: 100%;
-      box-shadow: 3px 3px 4px #000, -3px -3px 4px #fd9;
+      box-shadow: 3px 3px 4px #000, -3px -3px 4px ${(props) =>
+        props.variant === 'contact' ? '#fcc' : '#fd9'};
       z-index: -15;
     }
   }
@@ -98,6 +109,17 @@ const CardStyles = styled.div`
     @media(min-width: 1024px){
       padding: 0 2em .5em;
       font-size: 1.2em;
+    }
+  }
+  .container{
+    display: ${(props) =>
+      props.variant === 'contact' ? 'flex' : 'none'} !important;
+    width: 100%;
+    height: 4em;
+    align-items: center;
+    justify-content: center;
+    a{
+      font-size: 1.3em;
     }
   }
   .rope1{

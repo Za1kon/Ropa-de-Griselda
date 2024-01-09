@@ -21,12 +21,10 @@ export const Header = () => {
   return (
     <HeaderStyled>
       <Link to='/' className='logo'>
-        <img src={logo} alt="Logo" className='logo__img'/>
       </Link>
       <nav className={`links ${clicked ? 'active' : ''}`}>
         <NavLink to='/' onClick={handleClick}>Inicio</NavLink>
         <NavLink to='/religion-clothing' onClick={handleClick}>Ropa de Religión</NavLink>
-        <NavLink to='/reviews' onClick={handleClick}>Reseñas</NavLink>
         <NavLink to='/contact' onClick={handleClick}>Contacto</NavLink>
       </nav>
       <div className='burger'>
@@ -49,9 +47,9 @@ const HeaderStyled = styled.header`
       margin-top: 4em;
     }
     &__img {
-      width: 6em;
+      width: 7em;
       @media(min-width: 1024px){
-        width: 8em;
+        width: 9em;
       }
     }
   }
@@ -72,7 +70,9 @@ const HeaderStyled = styled.header`
       text-transform: uppercase;
       font-size: .9em;
       @media(min-width: 768px){
-        padding: 5em 1em 1em;
+        border: #000;
+        border-style: groove ridge ridge groove ;
+        padding: 4em 1em 1em;
         border-radius: 5px;
         background-color: #232323;
       }
@@ -87,7 +87,7 @@ const HeaderStyled = styled.header`
         font-size: 1.3em;
       }
       &.active {
-        color: #7ad;
+        color: #F2BEB1;
       }
     }
     &.active {

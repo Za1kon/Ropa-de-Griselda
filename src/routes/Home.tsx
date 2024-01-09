@@ -3,6 +3,7 @@ import styled from "styled-components"
 import bgc from '../assets/bgc.jpg'
 import { Card } from "../components/Card"
 import { CardButton } from "../components/CardButton"
+import "../css/Animation.css"
 export const Home = () => {
   const [clicked, setClicked] = useState(false)
   const handleClick = () => {
@@ -13,20 +14,20 @@ export const Home = () => {
       <div className="container">
         <div className={`container__cards ${clicked ? 'hidden' : ''} ${clicked ? '' : 'animation'}`}>
           <Card
-          tittle="Introducción"
+          title="Introducción"
           paragraph="Somos Griselda y Soledad, madre e hija, y estamos emocionadas de presentarte nuestra tienda en línea, GrisySol." />
             <CardButton handleClick={handleClick} />
           <Card
-          tittle="Nuestra Colección"
+          title="Nuestra Colección"
           paragraph="Si bien nos especializamos en vestidos de religión, estamos emocionadas de ampliar nuestro catálogo en el futuro, ¡así que mantente atento a las emocionantes novedades que vendrán!" />
         </div>
         <div className={`container__cards ${clicked ? '' : 'hidden'} ${clicked ? 'animation' : ''}`}>
           <Card
-          tittle="Algunas Cosas"
+          title="Algunas Cosas"
           paragraph='Los ríos serpenteaban entre los bosques antiguos, creando un paisaje pintoresco y tranquilo. El sol se filtraba entre las hojas, pintando destellos dorados sobre la superficie del agua, mientras los pájaros cantaban en armonía.' />
             <CardButton moved="moved" handleClick={handleClick} />
           <Card
-          tittle="Otras Cosas"
+          title="Otras Cosas"
           paragraph="En la bulliciosa ciudad, el vaivén constante de personas llenaba las calles. Luces brillantes iluminaban los escaparates de tiendas variadas. El aroma de comida callejera mezclado con el sonido de conversaciones animadas creaba un ambiente vibrante y acogedor." />
         </div>
       </div>
@@ -50,6 +51,7 @@ const HomeStyled = styled.section`
     align-items: center;
     z-index: -100;
     .container{
+      transition: translate 0.3s;
       position: relative;
       top: 3em;
       padding: 1em;
@@ -88,21 +90,6 @@ const HomeStyled = styled.section`
         margin: 0 2em;
         position: absolute;
         translate: 0 -200vh;
-      }
-    }
-    .animation{
-      @keyframes bounces {
-        0% {
-          transform: translateY(-210vh);
-        }
-        50% {
-          transform: translateY(10vh);
-        }
-      }
-      @media (max-width: 767px){
-        animation-name: bounces;
-        animation-duration: .5s;
-        animation-timing-function: ease-in-out;
       }
     }
 `

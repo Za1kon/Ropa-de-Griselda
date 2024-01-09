@@ -13,10 +13,13 @@ export const BurgerButton: React.FC<ButtonProps> = ({ handleClick, clicked }) =>
   )
 }
 const BurgerStyled = styled.div`
-border-bottom-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border: #000;
+  border-style: groove ridge ridge groove ;
   padding-top: 3em;
   background-color: #232323;
   &.bgc__open{
+    border: none;
     padding-top: 0;
     background: none;
   }
