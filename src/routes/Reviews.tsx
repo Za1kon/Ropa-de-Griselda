@@ -9,7 +9,7 @@ const ReviewsStyles = styled.section`
     position: absolute;
     top: 0;
     width: 100%;
-    height: 100vh;
+    height: 100dvh;
     background-color: #0706;
     z-index: -100;
 `

@@ -11,7 +11,7 @@ const ProductsStyles = styled.section`
   position: absolute;
   top: 0;
   width: 100%;
-  height: 100vh;
+  height: 100dvh;
   min-height: 42em;
   background-color: #0076;
   display: flex;

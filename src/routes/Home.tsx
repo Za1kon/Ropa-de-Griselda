@@ -38,7 +38,7 @@ const HomeStyled = styled.section`
     position: absolute;
     top: 0;
     width: 100%;
-    height: 100vh;
+    height: 100dvh;
     min-height: 42em;
     overflow: hidden;
     @media(min-width: 1024px){

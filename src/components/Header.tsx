@@ -24,7 +24,7 @@ export const Header = () => {
       </Link>
       <nav className={`links ${clicked ? 'active' : ''}`}>
         <NavLink to='/' onClick={handleClick}>Inicio</NavLink>
-        <NavLink to='/religion-clothing' onClick={handleClick}>Ropa de Religión</NavLink>
+        <NavLink to='/religion-clothing' onClick={handleClick}>Productos</NavLink>
         <NavLink to='/contact' onClick={handleClick}>Contacto</NavLink>
       </nav>
       <div className='burger'>
